@@ -1,0 +1,83 @@
+*lengthy.txt*	Colorize sentences by their word count.
+
+
+LENGTHY REFERENCE MANUAL	by Israel Chauca F.
+
+
+Help on using lengthy                                                 *lengthy*
+
+1. Introduction				|lengthy-intro|
+2. Configuration			|lengthy-configuration|
+3. Other				|lengthy-other|
+
+==============================================================================
+ 1. INTRODUCTION                                                *lengthy-intro*
+
+Lengthy highlights sentences using different colors to help differentiate them
+by their word count. e.g.: sentences with one or two words are colored in red,
+sentences with three to five words are colored in blue, etc.
+
+==============================================================================
+ 2. CONFIGURATION                                       *lengthy-configuration*
+
+|'lengthy_eop'|			How paragraphs are delimited.
+|'lengthy_eos'|			Characters that end a sentence.
+|'lengthy_limits'|		Length limit for each color.
+|'lengthy_custom_highlight'|	Define the highlight groups or not.
+|'lengthy_foreground'|		Use a black foreground for the highlighting.
+
+
+------------------------------------------------------------------------------
+                                                                *'lengthy_eop'*
+Values: 'single' or 'double'                                                 ~
+Default: 'double'                                                            ~
+
+Paragraphs are delimited by a single or double end of line.
+
+------------------------------------------------------------------------------
+                                                                *'lengthy_eos'*
+Values: a string                                                             ~
+Default: '.!?'                                                               ~
+
+Which characters end a sentence.
+
+------------------------------------------------------------------------------
+                                                             *'lengthy_limits'*
+Values: list of numbers                                                      ~
+Default: [2, 5, 8, 11, 14, 18, 22, 26, 30, 35, 40, 45]                       ~
+
+The top limits of the intervals that will be used for the highlighting groups.
+
+------------------------------------------------------------------------------
+                                                   *'lengthy_custom_highlight'*
+Values: 1 or 0                                                               ~
+Default: 0                                                                   ~
+
+Whether the user or the plugin will define the highlighting. In order to use
+custom colors, set this variable to 1 and use something like the following to
+define your own highlighting:
+>
+ hi Lengthy1  ctermfg=0 ctermbg=9  guifg=#000000 guibg=Red
+ hi Lengthy2  ctermfg=0 ctermbg=10 guifg=#000000 guibg=Green
+ hi Lengthy3  ctermfg=0 ctermbg=11 guifg=#000000 guibg=Cyan
+ hi Lengthy4  ctermfg=0 ctermbg=12 guifg=#000000 guibg=LightRed
+ hi Lengthy5  ctermfg=0 ctermbg=13 guifg=#000000 guibg=LightMagenta
+ hi Lengthy6  ctermfg=0 ctermbg=14 guifg=#000000 guibg=Yellow
+ hi Lengthy7  ctermfg=0 ctermbg=1  guifg=#000000 guibg=LightGreen
+ hi Lengthy8  ctermfg=0 ctermbg=2  guifg=#000000 guibg=DarkYellow
+ hi Lengthy9  ctermfg=0 ctermbg=3  guifg=#000000 guibg=LightCyan
+ hi Lengthy10 ctermfg=0 ctermbg=4  guifg=#000000 guibg=DarkCyan
+ hi Lengthy11 ctermfg=0 ctermbg=5  guifg=#000000 guibg=LightYellow
+ hi Lengthy12 ctermfg=0 ctermbg=6  guifg=#000000 guibg=Orange
+ hi Lengthy13 ctermfg=0 ctermbg=7  guifg=#000000 guibg=LightBluE
+<
+------------------------------------------------------------------------------
+                                                         *'lengthy_foreground'*
+Values: 'white' or 'black'                                                   ~
+Default: 'black'                                                             ~
+
+Whether to use black or white for the foreground color.
+
+==============================================================================
+Template From: https://github.com/dahu/Area-41/
+ vim:tw=78:ts=8:ft=help:norl:
